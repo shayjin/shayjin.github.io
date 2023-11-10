@@ -1,0 +1,167 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 98vh;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 840px) {
+  .container {
+    width: 95%;
+  }
+
+  .top {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+@media screen and (max-width: 330) {
+  html {
+    font-size: 50%;
+  }
+}
+
+.top {
+  width: 800px;
+  display: flex;
+  margin-bottom: -20px;
+}
+
+.header {
+  padding-top: 1.5rem;
+  flex: 1;
+}
+
+.navbar {
+  padding-top: 1.5rem;
+}
+
+.navbar-list {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-item {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  flex-grow: 1;
+  margin-top: -30px;
+}
+
+.left-content {
+  flex: 1;
+  padding: 1rem;
+  width: 50%;
+  overflow-y: scroll;
+  border-top: 1px solid black;
+  border-radius: 1px;
+}
+
+.right-content {
+  flex: 1;
+  padding: 1rem;
+  width: 50%;
+  overflow-y: scroll;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-radius: 1px;
+}
+
+.left-content div {
+  padding: 10px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+
+.experience {
+  margin-bottom: 20px;
+  border-radius: 3px;
+}
+
+.experience a {
+  color: rgb(7, 0, 145);
+  text-decoration: none;
+}
+
+.exp-row1, .exp-row2 {
+  display: flex;
+  padding: 2px;
+}
+
+.exp-row1 a {
+  text-decoration: none;
+  color: rgb(7, 0, 145);
+}
+
+#position, #tools {
+  color: rgb(107, 107, 107);
+}
+
+.exp-row3 div {
+  padding: 2px;
+}
+
+.profile-pic {
+  width:700px;
+  height: 500px;
+}
+
+#life {
+  text-align: center;
+}
+
+.achievement-list {
+  padding-left: 10px; /* Adjust this value to control the indentation of the achievements */
+}
+
+.achievement-list div {
+  margin-left: 10px;
+  text-indent: -10px; /* Adjust this value to align the text of achievements with the text above */
+}
+
+
+.profile img {
+  width: 150px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.profile-des {
+  text-align: center;
+  padding-bottom: 1.5rem;
+}
+
+.profile-des h2, .profile-des p {
+  margin: 5px;
+}
