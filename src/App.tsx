@@ -8,7 +8,7 @@ function Main() {
   var experienceJson = [
     {
       company: "The Ohio State University",
-      website: "",
+      website: "https://www.osu.edu/",
       location: "Columbus, OH",
       position: "B.S. in Computer Science",
       date: "08.2020 - 12.2024",
@@ -18,7 +18,7 @@ function Main() {
     },
     {
       company: "Expedia Group",
-      website: "",
+      website: "https://www.expedia.com/",
       location: "Seattle, WA",
       position: "Software Development Engineer Intern",
       date: "05.2023 - 08.2023",
@@ -27,7 +27,7 @@ function Main() {
     },
     {
       company: "Clinisys",
-      website: "",
+      website: "https://www.clinisys.com/in/en/",
       location: "Tucson, AZ",
       position: "Software Engineer Intern",
       date: "05.2022 - 08.2022",
@@ -36,7 +36,7 @@ function Main() {
     },
     {
       company: "Ohio State College of Engineering",
-      website: "",
+      website: "https://engineering.osu.edu/",
       location: "Columbus, OH",
       position: "Teaching Assistant II",
       date: "08.2021 - Present",
@@ -45,7 +45,7 @@ function Main() {
     },
     {
       company: "Robintek",
-      website: "",
+      website: "https://www.robintek.com/",
       location: "Westerville, OH",
       position: "Software Engineer Intern",
       date: "05.2021-08.2021",
