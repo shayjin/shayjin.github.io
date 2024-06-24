@@ -3,17 +3,40 @@ import logo from './logo.svg';
 import './App.css';
 import {Link, Route, Routes, BrowserRouter } from 'react-router-dom';
 import { NavBar } from './NavBar';
+import { Work } from './Work';
 
 function Main() {
   var experienceJson = [
     {
+      company: "Georgia Institute of Technology",
+      website: "https://www.gatech.edu/",
+      location: "Atlanta, GA",
+      position: "Master of Science - Computer Science",
+      date: "Starts 08.2024",
+      acheivements: [
+      ]
+    },
+    {
       company: "The Ohio State University",
       website: "https://www.osu.edu/",
       location: "Columbus, OH",
-      position: "B.S. in Computer Science",
-      date: "08.2020 - 12.2024",
+      position: "Bachelor of Science - Computer Science",
+      date: "08.2020 - 05.2024",
       acheivements: [
-        "Land Grant Scholarship (Full Ride) ",
+        {
+          name: "Land Grant Opportunity Scholarship (Full Ride) ",
+          link: "https://undergrad.osu.edu/cost-and-aid/merit-based-scholarships"
+        }
+      ] 
+      
+    },
+    {
+      company: "Expedia Group",
+      website: "https://www.expedia.com/",
+      location: "Seattle, WA",
+      position: "Software Development Engineer Intern",
+      date: "05.2024 - 08.2024",
+      acheivements: [
       ]
     },
     {
@@ -39,7 +62,7 @@ function Main() {
       website: "https://engineering.osu.edu/",
       location: "Columbus, OH",
       position: "Teaching Assistant II",
-      date: "08.2021 - Present",
+      date: "08.2021 - 05.2024",
       acheivements: [
       ]
     },
@@ -48,7 +71,7 @@ function Main() {
       website: "https://www.robintek.com/",
       location: "Westerville, OH",
       position: "Software Engineer Intern",
-      date: "05.2021-08.2021",
+      date: "05.2021 - 08.2021",
       acheivements: [
       ]
     },
@@ -62,28 +85,30 @@ function Main() {
     var achievements = [];
   
     for (var achievement of experience.acheivements) {
-      achievements.push(<div className="achievement" dangerouslySetInnerHTML={{ __html: "  -     " + achievement }}/>);
+      achievements.push(<div className="achievement"><a href={achievement.link} target="_blank">- {achievement.name}</a></div>);
     }
   
     experiences.push(
-      <div className="experience">
-        <div className="exp-row1">
-          <div style={{ flex: 1 }}><b><a href={experience.website} target="_blank">{experience.company}</a></b></div>
-          <div><b>{experience.location}</b></div>
-        </div>
-        <div className="exp-row2">
-          <div id="position" style={{ flex: 1 }}>{experience.position}</div>
-          <div>{experience.date}</div>
-        </div>
-        <div className="exp-row3">
-          <div className="achievement-container">
-            <div className="achievement-list">
-              {achievements}
+      <>      
+        <div className="experience">
+          <div className="exp-row1">
+            <div style={{ flex: 1 }} id="place"><a href={experience.website} target="_blank">{experience.company}</a></div>
+            <div>{experience.date}</div>
+          </div>
+          <div className="exp-row2">
+            <div id="position" style={{ flex: 1 }}>{experience.position}</div>
+            <div><i>{experience.location}</i></div>
+          </div>
+          <div className="exp-row3">
+            <div className="achievement-container">
+              <div className="achievement-list">
+                {achievements}
+              </div>
             </div>
           </div>
         </div>
         <hr/>
-      </div>
+      </>
     )
   }
 
@@ -96,11 +121,11 @@ function Main() {
           <img src={require('./images/bitmoji.png')}/>
           <div className="profile-des">
             <h2>Jay Shin</h2>
-            <p>Ex-Expedia | CSE @ Ohio State</p>
+            <p>SDE Intern @ Expedia | MSCS @ Georgia Tech</p>
           </div>
 
         </div>
-          <div className="cotent">
+          <div>
             {experiences}
           </div>
       </div>
@@ -113,7 +138,7 @@ function App() {
     <Routes>
       <Route path="" element={<Main />} />
       <Route path="/" element={<Main />} />
-      <Route path="/work" element={<Main />} />
+      <Route path="/school" element={<Work />} />
     </Routes>
   </BrowserRouter>
   );

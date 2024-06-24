@@ -5,11 +5,16 @@ export const NavBar = () => {
 
     return (
         <>
-            <header className="header"><h2>Jay Shin</h2></header>
+            <header className="header">
+                <Link to ="/"><h2>Jay Shin</h2></Link>
+            </header>
             <nav className="navbar">
             <ul className="navbar-list">
                 <Link to ="/">
-                    <li className="navbar-item">work</li>
+                    <li className="navbar-item">home</li>
+                </Link>
+                <Link to ="/school">
+                    <li className="navbar-item">school</li>
                 </Link>
             </ul>
             </nav>
