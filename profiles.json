@@ -1,0 +1,61 @@
+[
+    {
+        "name": "이희루",
+        "debut": 2015,
+        "mentions": 204,
+        "days": 32,
+        "average": 204,
+        "rank": 1,
+        "occupation": "카카오톡"
+    },
+    {
+        "name": "Jasonn Cooney",
+        "debut": 2014,
+        "mentions": 191,
+        "days": 55,
+        "average": 191,
+        "rank": 2
+    },
+    {
+        "name": "심의섭",
+        "debut": 2015,
+        "mentions": 137,
+        "days": 36,
+        "average": 137,
+        "rank": 4,
+        "occupation": "NU"
+    },
+    {
+        "name": "정원식",
+        "debut": 2013,
+        "mentions": 80,
+        "days": 22,
+        "average": 80,
+        "rank": 8
+    },
+    {
+        "name": "홍문수",
+        "debut": 2016,
+        "mentions": 53,
+        "days": 17,
+        "average": 53,
+        "rank": 10
+    },
+    {
+        "name": "백인혁",
+        "debut": 2016,
+        "mentions": 47,
+        "days": 19,
+        "average": 47,
+        "rank": 12,
+        "occupation": "MAVERICK"
+    },
+    {
+        "name": "이빈화",
+        "debut": 2018,
+        "mentions": 21,
+        "days": 7,
+        "average": 21,
+        "rank": 27
+    }
+]
