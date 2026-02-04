@@ -67,7 +67,6 @@
             font-weight: 300;
         }
 
-        /* Year Tabs */
         .year-tabs {
             display: flex;
             justify-content: center;
@@ -123,7 +122,6 @@
             border: 1px solid var(--border-color);
         }
 
-        /* Section Grid */
         .section-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -163,7 +161,6 @@
             font-weight: 500;
         }
 
-        /* Leaderboard Styles */
         .leaderboard {
             display: flex;
             flex-direction: column;
@@ -251,7 +248,6 @@
         .occ-행복한교회 { background: rgba(236, 72, 153, 0.2); border: 1px solid rgba(236, 72, 153, 0.5); color: #ec4899; }
         .occ-무소속 { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.3); color: #ffffff; }
 
-        /* Occupation Grid */
         .occupation-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -319,7 +315,6 @@
             font-size: 0.8rem;
         }
 
-        /* Monthly Grid */
         .monthly-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -350,7 +345,6 @@
             font-weight: 600;
         }
 
-        /* Special Stats Section */
         .full-width {
             grid-column: 1 / -1;
         }
@@ -404,7 +398,6 @@
             font-size: 0.9rem;
         }
 
-        /* Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -421,6 +414,108 @@
         ::-webkit-scrollbar-thumb:hover {
             background: var(--accent-blue);
         }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-grid {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .occupation-grid {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+
+            .occ-card {
+                width: 100%;
+            }
+
+            .monthly-grid {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+
+            .month-card {
+                width: 100%;
+            }
+
+            .stats-row {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+
+            .stat-item {
+                width: 100%;
+            }
+
+            .year-tabs {
+                flex-wrap: wrap;
+            }
+
+            .leaderboard-item {
+                padding: 0.5rem 0.75rem;
+            }
+
+            .name {
+                font-size: 0.9rem;
+            }
+
+            .count {
+                font-size: 0.85rem;
+            }
+
+            .meta {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0.75rem;
+            }
+
+            .card {
+                padding: 1rem;
+            }
+
+            .leaderboard-item {
+                padding: 0.5rem;
+            }
+
+            .rank {
+                width: 1.75rem;
+                height: 1.75rem;
+                font-size: 0.75rem;
+                margin-right: 0.5rem;
+            }
+
+            .name {
+                font-size: 0.85rem;
+            }
+
+            .occupation-badge {
+                font-size: 0.55rem;
+                padding: 1px 4px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -431,439 +526,13 @@
         </header>
 
         <div class="year-tabs">
-            <button class="year-tab active" onclick="showYear('2025')">2025년</button>
-            <button class="year-tab" onclick="showYear('2026')">2026년</button>
-        </div>
-
-        <!-- 2025 Content -->
-        <div id="year-2025" class="year-content active">
-            <div class="date-range">📆 집계 기간: 01/01/2025 - 12/31/2025</div>
-            <div class="section-grid">
-                <!-- Total Message Counts -->
-                <div class="card">
-                    <div class="card-header">
-                        <span class="card-icon">💬</span>
-                        <h2 class="card-title">총 메시지 수 TOP 20</h2>
-                    </div>
-                    <div class="leaderboard">
-                        <div class="leaderboard-item"><span class="rank rank-1">1</span><span class="name">이희루</span><span class="count">204회</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-2">2</span><span class="name">Jasonn Cooney</span><span class="count">191회</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-3">3</span><span class="name">Ava Manfre</span><span class="count">157회</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">4</span><span class="name">심의섭</span><span class="count">137회</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">5</span><span class="name">김진성</span><span class="count">113회</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">6</span><span class="name">최휘서</span><span class="count">108회</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">7</span><span class="name">송동건</span><span class="count">98회</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">8</span><span class="name">정원식</span><span class="count">80회</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">9</span><span class="name">최유진</span><span class="count">55회</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">10</span><span class="name">홍문수</span><span class="count">53회</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">11</span><span class="name">김나윤</span><span class="count">47회</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">12</span><span class="name">백인혁</span><span class="count">47회</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">13</span><span class="name">김도윤</span><span class="count">46회</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">14</span><span class="name">박종하</span><span class="count">42회</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">15</span><span class="name">최유백</span><span class="count">39회</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">16</span><span class="name">김남훈</span><span class="count">36회</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">17</span><span class="name">서종원</span><span class="count">34회</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">18</span><span class="name">김도건</span><span class="count">29회</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">19</span><span class="name">박규태</span><span class="count">29회</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">20</span><span class="name">박영훈</span><span class="count">24회</span></div>
-                    </div>
-                </div>
-
-                <!-- Active Days -->
-                <div class="card">
-                    <div class="card-header">
-                        <span class="card-icon">📅</span>
-                        <h2 class="card-title">활동 일수 TOP 20</h2>
-                    </div>
-                    <div class="leaderboard">
-                        <div class="leaderboard-item"><span class="rank rank-1">1</span><span class="name">Jasonn Cooney</span><span class="count">55일</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-2">2</span><span class="name">심의섭</span><span class="count">36일</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-3">3</span><span class="name">Ava Manfre</span><span class="count">33일</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">4</span><span class="name">이희루</span><span class="count">32일</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">5</span><span class="name">김진성</span><span class="count">24일</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">6</span><span class="name">송동건</span><span class="count">23일</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">7</span><span class="name">최휘서</span><span class="count">23일</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">8</span><span class="name">정원식</span><span class="count">22일</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">9</span><span class="name">김도건</span><span class="count">19일</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">10</span><span class="name">백인혁</span><span class="count">19일</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">11</span><span class="name">홍문수</span><span class="count">17일</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">12</span><span class="name">김나윤</span><span class="count">15일</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">13</span><span class="name">김도윤</span><span class="count">14일</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">14</span><span class="name">최유백</span><span class="count">13일</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">15</span><span class="name">박규태</span><span class="count">13일</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">16</span><span class="name">박세아</span><span class="count">12일</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">17</span><span class="name">이채민</span><span class="count">12일</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">18</span><span class="name">최유진</span><span class="count">12일</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">19</span><span class="name">박영훈</span><span class="count">11일</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">20</span><span class="name">김남훈</span><span class="count">11일</span></div>
-                    </div>
-                </div>
-
-                <!-- Daily Max -->
-                <div class="card">
-                    <div class="card-header">
-                        <span class="card-icon">🔥</span>
-                        <h2 class="card-title">하루동안 최다 메시지 TOP 20</h2>
-                    </div>
-                    <div class="leaderboard">
-                        <div class="leaderboard-item"><span class="rank rank-1">1</span><span class="name">이희루</span><span class="count">48회</span><span class="meta">02-05</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-2">2</span><span class="name">이희루</span><span class="count">38회</span><span class="meta">04-03</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-3">3</span><span class="name">Ava Manfre</span><span class="count">30회</span><span class="meta">10-17</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">4</span><span class="name">송동건</span><span class="count">25회</span><span class="meta">01-01</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">5</span><span class="name">박종하</span><span class="count">25회</span><span class="meta">07-01</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">6</span><span class="name">최휘서</span><span class="count">25회</span><span class="meta">10-21</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">7</span><span class="name">Jasonn Cooney</span><span class="count">24회</span><span class="meta">01-23</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">8</span><span class="name">이희루</span><span class="count">24회</span><span class="meta">07-01</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">9</span><span class="name">이경백</span><span class="count">22회</span><span class="meta">04-23</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">10</span><span class="name">김진성</span><span class="count">22회</span><span class="meta">10-21</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">11</span><span class="name">김도건</span><span class="count">21회</span><span class="meta">02-04</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">12</span><span class="name">Jasonn Cooney</span><span class="count">18회</span><span class="meta">01-20</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">13</span><span class="name">Haolin</span><span class="count">17회</span><span class="meta">08-03</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">14</span><span class="name">Ava Manfre</span><span class="count">17회</span><span class="meta">09-02</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">15</span><span class="name">박규태</span><span class="count">16회</span><span class="meta">03-25</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">16</span><span class="name">김도윤</span><span class="count">16회</span><span class="meta">03-26</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">17</span><span class="name">서종원</span><span class="count">16회</span><span class="meta">04-03</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">18</span><span class="name">김진성</span><span class="count">16회</span><span class="meta">07-18</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">19</span><span class="name">심의섭</span><span class="count">16회</span><span class="meta">10-18</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">20</span><span class="name">김나윤</span><span class="count">16회</span><span class="meta">10-24</span></div>
-                    </div>
-                </div>
-
-                <!-- Monthly TOP 5 -->
-                <div class="card full-width">
-                    <div class="card-header">
-                        <span class="card-icon">🏆</span>
-                        <h2 class="card-title">월별 TOP 5</h2>
-                    </div>
-                    <div class="monthly-grid">
-                        <div class="month-card">
-                            <div class="month-title">1월</div>
-                            <div class="month-item"><span class="rank-num">1.</span> Jasonn Cooney - 76회</div>
-                            <div class="month-item"><span class="rank-num">2.</span> 송동건 - 36회</div>
-                            <div class="month-item"><span class="rank-num">3.</span> 박세아 - 16회</div>
-                            <div class="month-item"><span class="rank-num">4.</span> 이희루 - 14회</div>
-                            <div class="month-item"><span class="rank-num">5.</span> 서종원 - 11회</div>
-                        </div>
-                        <div class="month-card">
-                            <div class="month-title">2월</div>
-                            <div class="month-item"><span class="rank-num">1.</span> 이희루 - 75회</div>
-                            <div class="month-item"><span class="rank-num">2.</span> Ava Manfre - 23회</div>
-                            <div class="month-item"><span class="rank-num">3.</span> Jasonn Cooney - 17회</div>
-                            <div class="month-item"><span class="rank-num">4.</span> 송동건 - 13회</div>
-                            <div class="month-item"><span class="rank-num">5.</span> 심의섭 - 11회</div>
-                        </div>
-                        <div class="month-card">
-                            <div class="month-title">3월</div>
-                            <div class="month-item"><span class="rank-num">1.</span> 김도윤 - 23회</div>
-                            <div class="month-item"><span class="rank-num">2.</span> 최유백 - 16회</div>
-                            <div class="month-item"><span class="rank-num">3.</span> 박규태 - 11회</div>
-                            <div class="month-item"><span class="rank-num">4.</span> Ava Manfre - 8회</div>
-                            <div class="month-item"><span class="rank-num">5.</span> 백인혁 - 8회</div>
-                        </div>
-                        <div class="month-card">
-                            <div class="month-title">4월</div>
-                            <div class="month-item"><span class="rank-num">1.</span> 이희루 - 40회</div>
-                            <div class="month-item"><span class="rank-num">2.</span> 최휘서 - 22회</div>
-                            <div class="month-item"><span class="rank-num">3.</span> 이경백 - 22회</div>
-                            <div class="month-item"><span class="rank-num">4.</span> 서종원 - 18회</div>
-                            <div class="month-item"><span class="rank-num">5.</span> Jasonn Cooney - 17회</div>
-                        </div>
-                        <div class="month-card">
-                            <div class="month-title">5월</div>
-                            <div class="month-item"><span class="rank-num">1.</span> Jasonn Cooney - 29회</div>
-                            <div class="month-item"><span class="rank-num">2.</span> Ava Manfre - 6회</div>
-                            <div class="month-item"><span class="rank-num">3.</span> 이희루 - 6회</div>
-                            <div class="month-item"><span class="rank-num">4.</span> 김진성 - 5회</div>
-                            <div class="month-item"><span class="rank-num">5.</span> 김예서 - 3회</div>
-                        </div>
-                        <div class="month-card">
-                            <div class="month-title">6월</div>
-                            <div class="month-item"><span class="rank-num">1.</span> 봉기니 (김보성) - 14회</div>
-                            <div class="month-item"><span class="rank-num">2.</span> 이희루 - 11회</div>
-                            <div class="month-item"><span class="rank-num">3.</span> Jasonn Cooney - 9회</div>
-                            <div class="month-item"><span class="rank-num">4.</span> 김도건 - 8회</div>
-                            <div class="month-item"><span class="rank-num">5.</span> 홍문수 - 7회</div>
-                        </div>
-                        <div class="month-card">
-                            <div class="month-title">7월</div>
-                            <div class="month-item"><span class="rank-num">1.</span> 이희루 - 42회</div>
-                            <div class="month-item"><span class="rank-num">2.</span> 박종하 - 34회</div>
-                            <div class="month-item"><span class="rank-num">3.</span> 송동건 - 22회</div>
-                            <div class="month-item"><span class="rank-num">4.</span> Ava Manfre - 19회</div>
-                            <div class="month-item"><span class="rank-num">5.</span> 심의섭 - 15회</div>
-                        </div>
-                        <div class="month-card">
-                            <div class="month-title">8월</div>
-                            <div class="month-item"><span class="rank-num">1.</span> 이창주 - 21회</div>
-                            <div class="month-item"><span class="rank-num">2.</span> Haolin - 17회</div>
-                            <div class="month-item"><span class="rank-num">3.</span> 김남훈 - 11회</div>
-                            <div class="month-item"><span class="rank-num">4.</span> 노수연 - 8회</div>
-                            <div class="month-item"><span class="rank-num">5.</span> 정원식 - 8회</div>
-                        </div>
-                        <div class="month-card">
-                            <div class="month-title">9월</div>
-                            <div class="month-item"><span class="rank-num">1.</span> Ava Manfre - 24회</div>
-                            <div class="month-item"><span class="rank-num">2.</span> 정원식 - 13회</div>
-                            <div class="month-item"><span class="rank-num">3.</span> Jasonn Cooney - 11회</div>
-                            <div class="month-item"><span class="rank-num">4.</span> 심의섭 - 10회</div>
-                            <div class="month-item"><span class="rank-num">5.</span> 노땡큐 - 9회</div>
-                        </div>
-                        <div class="month-card">
-                            <div class="month-title">10월</div>
-                            <div class="month-item"><span class="rank-num">1.</span> 김진성 - 90회</div>
-                            <div class="month-item"><span class="rank-num">2.</span> Ava Manfre - 60회</div>
-                            <div class="month-item"><span class="rank-num">3.</span> 최휘서 - 46회</div>
-                            <div class="month-item"><span class="rank-num">4.</span> 심의섭 - 37회</div>
-                            <div class="month-item"><span class="rank-num">5.</span> 정원식 - 32회</div>
-                        </div>
-                        <div class="month-card">
-                            <div class="month-title">11월</div>
-                            <div class="month-item"><span class="rank-num">1.</span> 심의섭 - 45회</div>
-                            <div class="month-item"><span class="rank-num">2.</span> 이빈화 - 21회</div>
-                            <div class="month-item"><span class="rank-num">3.</span> 홍문수 - 20회</div>
-                            <div class="month-item"><span class="rank-num">4.</span> 이채민 - 12회</div>
-                            <div class="month-item"><span class="rank-num">5.</span> 이승전 - 11회</div>
-                        </div>
-                        <div class="month-card">
-                            <div class="month-title">12월</div>
-                            <div class="month-item"><span class="rank-num">1.</span> 최휘서 - 20회</div>
-                            <div class="month-item"><span class="rank-num">2.</span> 변형빈 - 17회</div>
-                            <div class="month-item"><span class="rank-num">3.</span> 최유진 - 12회</div>
-                            <div class="month-item"><span class="rank-num">4.</span> 이예슬 - 8회</div>
-                            <div class="month-item"><span class="rank-num">5.</span> 송동건 - 6회</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Most Active Days -->
-                <div class="card full-width">
-                    <div class="card-header">
-                        <span class="card-icon">🎉</span>
-                        <h2 class="card-title">가장 활발한 날 TOP 20</h2>
-                    </div>
-                    <div class="stats-row">
-                        <div class="stat-item"><span class="stat-rank">1</span><div class="stat-info"><div class="stat-name">04-28-2025</div><div class="stat-detail">50명 참여</div></div><span class="stat-value">233회</span></div>
-                        <div class="stat-item"><span class="stat-rank">2</span><div class="stat-info"><div class="stat-name">04-23-2025</div><div class="stat-detail">42명 참여</div></div><span class="stat-value">135회</span></div>
-                        <div class="stat-item"><span class="stat-rank">3</span><div class="stat-info"><div class="stat-name">10-21-2025</div><div class="stat-detail">20명 참여</div></div><span class="stat-value">111회</span></div>
-                        <div class="stat-item"><span class="stat-rank">4</span><div class="stat-info"><div class="stat-name">04-03-2025</div><div class="stat-detail">27명 참여</div></div><span class="stat-value">101회</span></div>
-                        <div class="stat-item"><span class="stat-rank">5</span><div class="stat-info"><div class="stat-name">10-25-2025</div><div class="stat-detail">17명 참여</div></div><span class="stat-value">76회</span></div>
-                        <div class="stat-item"><span class="stat-rank">6</span><div class="stat-info"><div class="stat-name">07-01-2025</div><div class="stat-detail">11명 참여</div></div><span class="stat-value">69회</span></div>
-                        <div class="stat-item"><span class="stat-rank">7</span><div class="stat-info"><div class="stat-name">11-26-2025</div><div class="stat-detail">19명 참여</div></div><span class="stat-value">69회</span></div>
-                        <div class="stat-item"><span class="stat-rank">8</span><div class="stat-info"><div class="stat-name">10-26-2025</div><div class="stat-detail">21명 참여</div></div><span class="stat-value">65회</span></div>
-                        <div class="stat-item"><span class="stat-rank">9</span><div class="stat-info"><div class="stat-name">02-05-2025</div><div class="stat-detail">5명 참여</div></div><span class="stat-value">52회</span></div>
-                        <div class="stat-item"><span class="stat-rank">10</span><div class="stat-info"><div class="stat-name">09-02-2025</div><div class="stat-detail">9명 참여</div></div><span class="stat-value">51회</span></div>
-                        <div class="stat-item"><span class="stat-rank">11</span><div class="stat-info"><div class="stat-name">10-19-2025</div><div class="stat-detail">12명 참여</div></div><span class="stat-value">51회</span></div>
-                        <div class="stat-item"><span class="stat-rank">12</span><div class="stat-info"><div class="stat-name">04-29-2025</div><div class="stat-detail">11명 참여</div></div><span class="stat-value">50회</span></div>
-                        <div class="stat-item"><span class="stat-rank">13</span><div class="stat-info"><div class="stat-name">02-04-2025</div><div class="stat-detail">10명 참여</div></div><span class="stat-value">46회</span></div>
-                        <div class="stat-item"><span class="stat-rank">14</span><div class="stat-info"><div class="stat-name">10-17-2025</div><div class="stat-detail">5명 참여</div></div><span class="stat-value">40회</span></div>
-                        <div class="stat-item"><span class="stat-rank">15</span><div class="stat-info"><div class="stat-name">12-21-2025</div><div class="stat-detail">13명 참여</div></div><span class="stat-value">40회</span></div>
-                        <div class="stat-item"><span class="stat-rank">16</span><div class="stat-info"><div class="stat-name">01-03-2025</div><div class="stat-detail">15명 참여</div></div><span class="stat-value">39회</span></div>
-                        <div class="stat-item"><span class="stat-rank">17</span><div class="stat-info"><div class="stat-name">10-23-2025</div><div class="stat-detail">9명 참여</div></div><span class="stat-value">37회</span></div>
-                        <div class="stat-item"><span class="stat-rank">18</span><div class="stat-info"><div class="stat-name">03-25-2025</div><div class="stat-detail">7명 참여</div></div><span class="stat-value">36회</span></div>
-                        <div class="stat-item"><span class="stat-rank">19</span><div class="stat-info"><div class="stat-name">12-06-2025</div><div class="stat-detail">7명 참여</div></div><span class="stat-value">36회</span></div>
-                        <div class="stat-item"><span class="stat-rank">20</span><div class="stat-info"><div class="stat-name">01-23-2025</div><div class="stat-detail">5명 참여</div></div><span class="stat-value">35회</span></div>
-                    </div>
-                </div>
-
-                <!-- Occupation Mention Ranking 2025 -->
-                <div class="card">
-                    <div class="card-header">
-                        <span class="card-icon">🏆</span>
-                        <h2 class="card-title">2025년 소속별 언급순위</h2>
-                    </div>
-                    <div class="leaderboard">
-                        <div class="leaderboard-item"><span class="rank rank-1">1</span><span class="name">수성초</span><span class="count">849회</span><span class="meta">90명</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-2">2</span><span class="name">NU</span><span class="count">585회</span><span class="meta">15명</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-3">3</span><span class="name">OSU</span><span class="count">432회</span><span class="meta">14명</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">4</span><span class="name">카카오톡</span><span class="count">259회</span><span class="meta">9명</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">5</span><span class="name">MAVERICK</span><span class="count">250회</span><span class="meta">12명</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">6</span><span class="name">무소속</span><span class="count">228회</span><span class="meta">34명</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">7</span><span class="name">행복한교회</span><span class="count">82회</span><span class="meta">11명</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">8</span><span class="name">NEPES</span><span class="count">36회</span><span class="meta">1명</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">9</span><span class="name">DCU</span><span class="count">27회</span><span class="meta">3명</span></div>
-                        <div class="leaderboard-item"><span class="rank rank-other">10</span><span class="name">신천지</span><span class="count">12회</span><span class="meta">2명</span></div>
-                    </div>
-                </div>
-
-                <!-- Occupation Rankings 2025 -->
-                <div class="card full-width">
-                    <div class="card-header">
-                        <span class="card-icon">🏢</span>
-                        <h2 class="card-title">2025년 소속별 TOP 10</h2>
-                    </div>
-                    <div class="occupation-grid">
-                        <!-- NU (Purple) -->
-                        <div class="occ-card">
-                            <div class="occ-card-header">
-                                <span class="occ-card-title purple">🟣 NU</span>
-                            </div>
-                            <div class="occ-list">
-                                <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">Jasonn Cooney</span><span class="occ-count">191회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">2.</span><span class="occ-name">Ava Manfre</span><span class="occ-count">157회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">3.</span><span class="occ-name">심의섭</span><span class="occ-count">137회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">4.</span><span class="occ-name">오예진</span><span class="occ-count">24회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">5.</span><span class="occ-name">노수연</span><span class="occ-count">18회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">6.</span><span class="occ-name">김택권</span><span class="occ-count">13회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">7.</span><span class="occ-name">Zitian Dai</span><span class="occ-count">10회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">8.</span><span class="occ-name">김채윤</span><span class="occ-count">10회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">9.</span><span class="occ-name">정다은 (단단이)</span><span class="occ-count">7회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">10.</span><span class="occ-name">김희연</span><span class="occ-count">7회</span></div>
-                            </div>
-                        </div>
-
-                        <!-- OSU (Red) -->
-                        <div class="occ-card">
-                            <div class="occ-card-header">
-                                <span class="occ-card-title red">🔴 OSU</span>
-                            </div>
-                            <div class="occ-list">
-                                <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">김진성</span><span class="occ-count">113회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">2.</span><span class="occ-name">최휘서</span><span class="occ-count">108회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">3.</span><span class="occ-name">최유진</span><span class="occ-count">55회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">4.</span><span class="occ-name">김나윤</span><span class="occ-count">47회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">5.</span><span class="occ-name">박종하</span><span class="occ-count">42회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">6.</span><span class="occ-name">변형빈</span><span class="occ-count">17회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">7.</span><span class="occ-name">박예인</span><span class="occ-count">16회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">8.</span><span class="occ-name">김세진</span><span class="occ-count">11회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">9.</span><span class="occ-name">징이</span><span class="occ-count">5회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">10.</span><span class="occ-name">김동건</span><span class="occ-count">4회</span></div>
-                            </div>
-                        </div>
-
-                        <!-- 수성초 (Green) -->
-                        <div class="occ-card">
-                            <div class="occ-card-header">
-                                <span class="occ-card-title green">🟢 수성초</span>
-                            </div>
-                            <div class="occ-list">
-                                <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">송동건</span><span class="occ-count">98회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">2.</span><span class="occ-name">정원식</span><span class="occ-count">80회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">3.</span><span class="occ-name">최유백</span><span class="occ-count">39회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">4.</span><span class="occ-name">서종원</span><span class="occ-count">34회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">5.</span><span class="occ-name">김도건</span><span class="occ-count">29회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">6.</span><span class="occ-name">박영훈</span><span class="occ-count">24회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">7.</span><span class="occ-name">이경백</span><span class="occ-count">23회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">8.</span><span class="occ-name">박상현</span><span class="occ-count">21회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">9.</span><span class="occ-name">이창주</span><span class="occ-count">21회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">10.</span><span class="occ-name">장세일</span><span class="occ-count">17회</span></div>
-                            </div>
-                        </div>
-
-                        <!-- MAVERICK (Blue) -->
-                        <div class="occ-card">
-                            <div class="occ-card-header">
-                                <span class="occ-card-title blue">🔵 MAVERICK</span>
-                            </div>
-                            <div class="occ-list">
-                                <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">홍문수</span><span class="occ-count">53회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">2.</span><span class="occ-name">백인혁</span><span class="occ-count">47회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">3.</span><span class="occ-name">김도윤</span><span class="occ-count">46회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">4.</span><span class="occ-name">박규태</span><span class="occ-count">29회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">5.</span><span class="occ-name">이채민</span><span class="occ-count">24회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">6.</span><span class="occ-name">김나원</span><span class="occ-count">15회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">7.</span><span class="occ-name">채하람</span><span class="occ-count">12회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">8.</span><span class="occ-name">조형빈</span><span class="occ-count">8회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">9.</span><span class="occ-name">서주현</span><span class="occ-count">5회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">10.</span><span class="occ-name">이현수</span><span class="occ-count">4회</span></div>
-                            </div>
-                        </div>
-
-                        <!-- 카카오톡 (Yellow) -->
-                        <div class="occ-card">
-                            <div class="occ-card-header">
-                                <span class="occ-card-title yellow">🟡 카카오톡</span>
-                            </div>
-                            <div class="occ-list">
-                                <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">이희루</span><span class="occ-count">204회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">2.</span><span class="occ-name">헌이</span><span class="occ-count">17회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">3.</span><span class="occ-name">파파존스</span><span class="occ-count">14회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">4.</span><span class="occ-name">준이</span><span class="occ-count">10회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">5.</span><span class="occ-name">현종이오빠</span><span class="occ-count">5회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">6.</span><span class="occ-name">범죄자관상남</span><span class="occ-count">4회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">7.</span><span class="occ-name">고길동</span><span class="occ-count">3회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">8.</span><span class="occ-name">이선정</span><span class="occ-count">1회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">9.</span><span class="occ-name">턱접남</span><span class="occ-count">1회</span></div>
-                            </div>
-                        </div>
-
-                        <!-- 행복한교회 (Pink) -->
-                        <div class="occ-card">
-                            <div class="occ-card-header">
-                                <span class="occ-card-title pink">💗 행복한교회</span>
-                            </div>
-                            <div class="occ-list">
-                                <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">이예슬</span><span class="occ-count">18회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">2.</span><span class="occ-name">정태우</span><span class="occ-count">15회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">3.</span><span class="occ-name">이종건</span><span class="occ-count">11회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">4.</span><span class="occ-name">김영은</span><span class="occ-count">9회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">5.</span><span class="occ-name">최현동</span><span class="occ-count">7회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">6.</span><span class="occ-name">이예희</span><span class="occ-count">6회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">7.</span><span class="occ-name">김민서</span><span class="occ-count">5회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">8.</span><span class="occ-name">최혜지</span><span class="occ-count">5회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">9.</span><span class="occ-name">장호진</span><span class="occ-count">2회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">10.</span><span class="occ-name">김소영</span><span class="occ-count">2회</span></div>
-                            </div>
-                        </div>
-
-                        <!-- DCU (Sky Blue) -->
-                        <div class="occ-card">
-                            <div class="occ-card-header">
-                                <span class="occ-card-title skyblue">🩵 DCU</span>
-                            </div>
-                            <div class="occ-list">
-                                <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">박세아</span><span class="occ-count">22회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">2.</span><span class="occ-name">정시윤</span><span class="occ-count">3회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">3.</span><span class="occ-name">이예지</span><span class="occ-count">2회</span></div>
-                            </div>
-                        </div>
-
-                        <!-- NEPES (Orange) -->
-                        <div class="occ-card">
-                            <div class="occ-card-header">
-                                <span class="occ-card-title orange">🟠 NEPES</span>
-                            </div>
-                            <div class="occ-list">
-                                <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">김남훈</span><span class="occ-count">36회</span></div>
-                            </div>
-                        </div>
-
-                        <!-- 무소속 (White) -->
-                        <div class="occ-card">
-                            <div class="occ-card-header">
-                                <span class="occ-card-title" style="color: #fff;">⚪ 무소속</span>
-                            </div>
-                            <div class="occ-list">
-                                <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">최창민 (보잡째)</span><span class="occ-count">22회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">2.</span><span class="occ-name">이빈화</span><span class="occ-count">21회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">3.</span><span class="occ-name">Haolin</span><span class="occ-count">18회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">4.</span><span class="occ-name">봉기니 (김보성)</span><span class="occ-count">17회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">5.</span><span class="occ-name">이승전</span><span class="occ-count">13회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">6.</span><span class="occ-name">최창민 (37세)</span><span class="occ-count">13회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">7.</span><span class="occ-name">영엠</span><span class="occ-count">10회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">8.</span><span class="occ-name">강종윤</span><span class="occ-count">9회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">9.</span><span class="occ-name">Bilge Mutlu</span><span class="occ-count">8회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">10.</span><span class="occ-name">김준욱</span><span class="occ-count">8회</span></div>
-                            </div>
-                        </div>
-
-                        <!-- 신천지 -->
-                        <div class="occ-card">
-                            <div class="occ-card-header">
-                                <span class="occ-card-title" style="color: #9ca3af;">⛪ 신천지</span>
-                            </div>
-                            <div class="occ-list">
-                                <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">김예서</span><span class="occ-count">10회</span></div>
-                                <div class="occ-list-item"><span class="rank-num">2.</span><span class="occ-name">푸주</span><span class="occ-count">2회</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <button class="year-tab active" onclick="showYear('2026')">2026년</button>
+            <button class="year-tab" onclick="showYear('2025')">2025년</button>
         </div>
 
         <!-- 2026 Content -->
-        <div id="year-2026" class="year-content">
-            <div class="date-range">📆 집계 기간: 01/01/2026 - 02/03/2026</div>
+        <div id="year-2026" class="year-content active">
+            <div class="date-range">📆 집계 기간: 01/01/2026 - 02/04/2026</div>
             <div class="section-grid">
                 <!-- Total Message Counts -->
                 <div class="card">
@@ -1038,7 +707,6 @@
                         <h2 class="card-title">2026년 소속별 TOP 10</h2>
                     </div>
                     <div class="occupation-grid">
-                        <!-- NU (Purple) -->
                         <div class="occ-card">
                             <div class="occ-card-header">
                                 <span class="occ-card-title purple">🟣 NU</span>
@@ -1055,8 +723,6 @@
                                 <div class="occ-list-item"><span class="rank-num">9.</span><span class="occ-name">Andy Zhao</span><span class="occ-count">1회</span></div>
                             </div>
                         </div>
-
-                        <!-- OSU (Red) -->
                         <div class="occ-card">
                             <div class="occ-card-header">
                                 <span class="occ-card-title red">🔴 OSU</span>
@@ -1070,8 +736,6 @@
                                 <div class="occ-list-item"><span class="rank-num">6.</span><span class="occ-name">징이</span><span class="occ-count">1회</span></div>
                             </div>
                         </div>
-
-                        <!-- 수성초 (Green) -->
                         <div class="occ-card">
                             <div class="occ-card-header">
                                 <span class="occ-card-title green">🟢 수성초</span>
@@ -1089,8 +753,6 @@
                                 <div class="occ-list-item"><span class="rank-num">10.</span><span class="occ-name">박도준</span><span class="occ-count">1회</span></div>
                             </div>
                         </div>
-
-                        <!-- MAVERICK (Blue) -->
                         <div class="occ-card">
                             <div class="occ-card-header">
                                 <span class="occ-card-title blue">🔵 MAVERICK</span>
@@ -1108,8 +770,6 @@
                                 <div class="occ-list-item"><span class="rank-num">10.</span><span class="occ-name">이현수</span><span class="occ-count">1회</span></div>
                             </div>
                         </div>
-
-                        <!-- 카카오톡 (Yellow) -->
                         <div class="occ-card">
                             <div class="occ-card-header">
                                 <span class="occ-card-title yellow">🟡 카카오톡</span>
@@ -1127,8 +787,6 @@
                                 <div class="occ-list-item"><span class="rank-num">10.</span><span class="occ-name">홍길동</span><span class="occ-count">4회</span></div>
                             </div>
                         </div>
-
-                        <!-- 행복한교회 (Pink) -->
                         <div class="occ-card">
                             <div class="occ-card-header">
                                 <span class="occ-card-title pink">💗 행복한교회</span>
@@ -1146,8 +804,6 @@
                                 <div class="occ-list-item"><span class="rank-num">10.</span><span class="occ-name">추혁준</span><span class="occ-count">18회</span></div>
                             </div>
                         </div>
-
-                        <!-- DCU (Sky Blue) -->
                         <div class="occ-card">
                             <div class="occ-card-header">
                                 <span class="occ-card-title skyblue">🩵 DCU</span>
@@ -1157,8 +813,6 @@
                                 <div class="occ-list-item"><span class="rank-num">2.</span><span class="occ-name">정시윤</span><span class="occ-count">1회</span></div>
                             </div>
                         </div>
-
-                        <!-- NEPES (Orange) -->
                         <div class="occ-card">
                             <div class="occ-card-header">
                                 <span class="occ-card-title orange">🟠 NEPES</span>
@@ -1167,11 +821,9 @@
                                 <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">김남훈</span><span class="occ-count">4회</span></div>
                             </div>
                         </div>
-
-                        <!-- 무소속 (White) -->
                         <div class="occ-card">
                             <div class="occ-card-header">
-                                <span class="occ-card-title" style="color: #fff;">⚪ 무소속</span>
+                                <span class="occ-card-title " style="color: #fff;">⚪ 무소속</span>
                             </div>
                             <div class="occ-list">
                                 <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">엣고</span><span class="occ-count">13회</span></div>
@@ -1185,11 +837,9 @@
                                 <div class="occ-list-item"><span class="rank-num">9.</span><span class="occ-name">최예지</span><span class="occ-count">1회</span></div>
                             </div>
                         </div>
-
-                        <!-- 신천지 -->
                         <div class="occ-card">
                             <div class="occ-card-header">
-                                <span class="occ-card-title" style="color: #9ca3af;">⛪ 신천지</span>
+                                <span class="occ-card-title " style="color: #9ca3af;">⛪ 신천지</span>
                             </div>
                             <div class="occ-list">
                                 <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">김예서</span><span class="occ-count">2회</span></div>
@@ -1202,71 +852,473 @@
             </div>
         </div>
 
+        <!-- 2025 Content -->
+        <div id="year-2025" class="year-content">
+            <div class="date-range">📆 집계 기간: 01/01/2025 - 12/31/2025</div>
+            <div class="section-grid">
+                <!-- Total Message Counts -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-icon">💬</span>
+                        <h2 class="card-title">총 메시지 수 TOP 20</h2>
+                    </div>
+                    <div class="leaderboard">
+                        <div class="leaderboard-item"><span class="rank rank-1">1</span><span class="name">이희루</span><span class="count">204회</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-2">2</span><span class="name">Jasonn Cooney</span><span class="count">191회</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-3">3</span><span class="name">Ava Manfre</span><span class="count">157회</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">4</span><span class="name">심의섭</span><span class="count">137회</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">5</span><span class="name">김진성</span><span class="count">113회</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">6</span><span class="name">최휘서</span><span class="count">108회</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">7</span><span class="name">송동건</span><span class="count">98회</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">8</span><span class="name">정원식</span><span class="count">80회</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">9</span><span class="name">최유진</span><span class="count">55회</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">10</span><span class="name">홍문수</span><span class="count">53회</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">11</span><span class="name">김나윤</span><span class="count">47회</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">12</span><span class="name">백인혁</span><span class="count">47회</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">13</span><span class="name">김도윤</span><span class="count">46회</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">14</span><span class="name">박종하</span><span class="count">42회</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">15</span><span class="name">최유백</span><span class="count">39회</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">16</span><span class="name">김남훈</span><span class="count">36회</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">17</span><span class="name">서종원</span><span class="count">34회</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">18</span><span class="name">김도건</span><span class="count">29회</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">19</span><span class="name">박규태</span><span class="count">29회</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">20</span><span class="name">박영훈</span><span class="count">24회</span></div>
+                    </div>
+                </div>
+
+                <!-- Active Days -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-icon">📅</span>
+                        <h2 class="card-title">활동 일수 TOP 20</h2>
+                    </div>
+                    <div class="leaderboard">
+                        <div class="leaderboard-item"><span class="rank rank-1">1</span><span class="name">Jasonn Cooney</span><span class="count">55일</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-2">2</span><span class="name">심의섭</span><span class="count">36일</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-3">3</span><span class="name">Ava Manfre</span><span class="count">33일</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">4</span><span class="name">이희루</span><span class="count">32일</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">5</span><span class="name">김진성</span><span class="count">24일</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">6</span><span class="name">송동건</span><span class="count">23일</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">7</span><span class="name">최휘서</span><span class="count">23일</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">8</span><span class="name">정원식</span><span class="count">22일</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">9</span><span class="name">김도건</span><span class="count">19일</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">10</span><span class="name">백인혁</span><span class="count">19일</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">11</span><span class="name">홍문수</span><span class="count">17일</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">12</span><span class="name">김나윤</span><span class="count">15일</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">13</span><span class="name">김도윤</span><span class="count">14일</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">14</span><span class="name">최유백</span><span class="count">13일</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">15</span><span class="name">박규태</span><span class="count">13일</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">16</span><span class="name">박세아</span><span class="count">12일</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">17</span><span class="name">이채민</span><span class="count">12일</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">18</span><span class="name">최유진</span><span class="count">12일</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">19</span><span class="name">박영훈</span><span class="count">11일</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">20</span><span class="name">김남훈</span><span class="count">11일</span></div>
+                    </div>
+                </div>
+
+                <!-- Daily Max -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-icon">🔥</span>
+                        <h2 class="card-title">하루동안 최다 메시지 TOP 20</h2>
+                    </div>
+                    <div class="leaderboard">
+                        <div class="leaderboard-item"><span class="rank rank-1">1</span><span class="name">이희루</span><span class="count">48회</span><span class="meta">02-05</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-2">2</span><span class="name">이희루</span><span class="count">38회</span><span class="meta">04-03</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-3">3</span><span class="name">Ava Manfre</span><span class="count">30회</span><span class="meta">10-17</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">4</span><span class="name">송동건</span><span class="count">25회</span><span class="meta">01-01</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">5</span><span class="name">박종하</span><span class="count">25회</span><span class="meta">07-01</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">6</span><span class="name">최휘서</span><span class="count">25회</span><span class="meta">10-21</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">7</span><span class="name">Jasonn Cooney</span><span class="count">24회</span><span class="meta">01-23</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">8</span><span class="name">이희루</span><span class="count">24회</span><span class="meta">07-01</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">9</span><span class="name">이경백</span><span class="count">22회</span><span class="meta">04-23</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">10</span><span class="name">김진성</span><span class="count">22회</span><span class="meta">10-21</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">11</span><span class="name">이희루</span><span class="count">21회</span><span class="meta">02-04</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">12</span><span class="name">Jasonn Cooney</span><span class="count">18회</span><span class="meta">01-20</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">13</span><span class="name">Haolin</span><span class="count">17회</span><span class="meta">08-03</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">14</span><span class="name">Ava Manfre</span><span class="count">17회</span><span class="meta">09-02</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">15</span><span class="name">김도윤</span><span class="count">16회</span><span class="meta">03-25</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">16</span><span class="name">최유백</span><span class="count">16회</span><span class="meta">03-26</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">17</span><span class="name">서종원</span><span class="count">16회</span><span class="meta">04-03</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">18</span><span class="name">송동건</span><span class="count">16회</span><span class="meta">07-18</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">19</span><span class="name">오예진</span><span class="count">16회</span><span class="meta">10-18</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">20</span><span class="name">김진성</span><span class="count">16회</span><span class="meta">10-24</span></div>
+                    </div>
+                </div>
+
+                <!-- Monthly TOP 5 -->
+                <div class="card full-width">
+                    <div class="card-header">
+                        <span class="card-icon">🏆</span>
+                        <h2 class="card-title">월별 TOP 5</h2>
+                    </div>
+                    <div class="monthly-grid">
+                        <div class="month-card">
+                            <div class="month-title">1월</div>
+                            <div class="month-item"><span class="rank-num">1.</span> Jasonn Cooney - 76회</div>
+                            <div class="month-item"><span class="rank-num">2.</span> 송동건 - 36회</div>
+                            <div class="month-item"><span class="rank-num">3.</span> 박세아 - 16회</div>
+                            <div class="month-item"><span class="rank-num">4.</span> 이희루 - 14회</div>
+                            <div class="month-item"><span class="rank-num">5.</span> 서종원 - 11회</div>
+                        </div>
+                        <div class="month-card">
+                            <div class="month-title">2월</div>
+                            <div class="month-item"><span class="rank-num">1.</span> 이희루 - 75회</div>
+                            <div class="month-item"><span class="rank-num">2.</span> Ava Manfre - 23회</div>
+                            <div class="month-item"><span class="rank-num">3.</span> Jasonn Cooney - 17회</div>
+                            <div class="month-item"><span class="rank-num">4.</span> 송동건 - 13회</div>
+                            <div class="month-item"><span class="rank-num">5.</span> 심의섭 - 11회</div>
+                        </div>
+                        <div class="month-card">
+                            <div class="month-title">3월</div>
+                            <div class="month-item"><span class="rank-num">1.</span> 김도윤 - 23회</div>
+                            <div class="month-item"><span class="rank-num">2.</span> 최유백 - 16회</div>
+                            <div class="month-item"><span class="rank-num">3.</span> 박규태 - 11회</div>
+                            <div class="month-item"><span class="rank-num">4.</span> Ava Manfre - 8회</div>
+                            <div class="month-item"><span class="rank-num">5.</span> 백인혁 - 8회</div>
+                        </div>
+                        <div class="month-card">
+                            <div class="month-title">4월</div>
+                            <div class="month-item"><span class="rank-num">1.</span> 이희루 - 40회</div>
+                            <div class="month-item"><span class="rank-num">2.</span> 최휘서 - 22회</div>
+                            <div class="month-item"><span class="rank-num">3.</span> 이경백 - 22회</div>
+                            <div class="month-item"><span class="rank-num">4.</span> 서종원 - 18회</div>
+                            <div class="month-item"><span class="rank-num">5.</span> Jasonn Cooney - 17회</div>
+                        </div>
+                        <div class="month-card">
+                            <div class="month-title">5월</div>
+                            <div class="month-item"><span class="rank-num">1.</span> Jasonn Cooney - 29회</div>
+                            <div class="month-item"><span class="rank-num">2.</span> Ava Manfre - 6회</div>
+                            <div class="month-item"><span class="rank-num">3.</span> 이희루 - 6회</div>
+                            <div class="month-item"><span class="rank-num">4.</span> 김진성 - 5회</div>
+                            <div class="month-item"><span class="rank-num">5.</span> 김예서 - 3회</div>
+                        </div>
+                        <div class="month-card">
+                            <div class="month-title">6월</div>
+                            <div class="month-item"><span class="rank-num">1.</span> 봉기니 (김보성) - 14회</div>
+                            <div class="month-item"><span class="rank-num">2.</span> 이희루 - 11회</div>
+                            <div class="month-item"><span class="rank-num">3.</span> Jasonn Cooney - 9회</div>
+                            <div class="month-item"><span class="rank-num">4.</span> 김도건 - 8회</div>
+                            <div class="month-item"><span class="rank-num">5.</span> 홍문수 - 7회</div>
+                        </div>
+                        <div class="month-card">
+                            <div class="month-title">7월</div>
+                            <div class="month-item"><span class="rank-num">1.</span> 이희루 - 42회</div>
+                            <div class="month-item"><span class="rank-num">2.</span> 박종하 - 34회</div>
+                            <div class="month-item"><span class="rank-num">3.</span> 송동건 - 22회</div>
+                            <div class="month-item"><span class="rank-num">4.</span> Ava Manfre - 19회</div>
+                            <div class="month-item"><span class="rank-num">5.</span> 심의섭 - 15회</div>
+                        </div>
+                        <div class="month-card">
+                            <div class="month-title">8월</div>
+                            <div class="month-item"><span class="rank-num">1.</span> 이창주 - 21회</div>
+                            <div class="month-item"><span class="rank-num">2.</span> Haolin - 17회</div>
+                            <div class="month-item"><span class="rank-num">3.</span> 김남훈 - 11회</div>
+                            <div class="month-item"><span class="rank-num">4.</span> 노수연 - 8회</div>
+                            <div class="month-item"><span class="rank-num">5.</span> 정원식 - 8회</div>
+                        </div>
+                        <div class="month-card">
+                            <div class="month-title">9월</div>
+                            <div class="month-item"><span class="rank-num">1.</span> Ava Manfre - 24회</div>
+                            <div class="month-item"><span class="rank-num">2.</span> 정원식 - 13회</div>
+                            <div class="month-item"><span class="rank-num">3.</span> Jasonn Cooney - 11회</div>
+                            <div class="month-item"><span class="rank-num">4.</span> 심의섭 - 10회</div>
+                            <div class="month-item"><span class="rank-num">5.</span> 노땡큐 - 9회</div>
+                        </div>
+                        <div class="month-card">
+                            <div class="month-title">10월</div>
+                            <div class="month-item"><span class="rank-num">1.</span> 김진성 - 90회</div>
+                            <div class="month-item"><span class="rank-num">2.</span> Ava Manfre - 60회</div>
+                            <div class="month-item"><span class="rank-num">3.</span> 최휘서 - 46회</div>
+                            <div class="month-item"><span class="rank-num">4.</span> 심의섭 - 37회</div>
+                            <div class="month-item"><span class="rank-num">5.</span> 정원식 - 32회</div>
+                        </div>
+                        <div class="month-card">
+                            <div class="month-title">11월</div>
+                            <div class="month-item"><span class="rank-num">1.</span> 심의섭 - 45회</div>
+                            <div class="month-item"><span class="rank-num">2.</span> 이빈화 - 21회</div>
+                            <div class="month-item"><span class="rank-num">3.</span> 홍문수 - 20회</div>
+                            <div class="month-item"><span class="rank-num">4.</span> 최창민 (보잡째) - 12회</div>
+                            <div class="month-item"><span class="rank-num">5.</span> 이채민 - 12회</div>
+                        </div>
+                        <div class="month-card">
+                            <div class="month-title">12월</div>
+                            <div class="month-item"><span class="rank-num">1.</span> 최휘서 - 20회</div>
+                            <div class="month-item"><span class="rank-num">2.</span> 변형빈 - 17회</div>
+                            <div class="month-item"><span class="rank-num">3.</span> 최유진 - 12회</div>
+                            <div class="month-item"><span class="rank-num">4.</span> 이예슬 - 8회</div>
+                            <div class="month-item"><span class="rank-num">5.</span> 송동건 - 6회</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Most Active Days -->
+                <div class="card full-width">
+                    <div class="card-header">
+                        <span class="card-icon">🎉</span>
+                        <h2 class="card-title">가장 활발한 날 TOP 20</h2>
+                    </div>
+                    <div class="stats-row">
+                        <div class="stat-item"><span class="stat-rank">1</span><div class="stat-info"><div class="stat-name">04-28-2025</div><div class="stat-detail">50명 참여</div></div><span class="stat-value">233회</span></div>
+                        <div class="stat-item"><span class="stat-rank">2</span><div class="stat-info"><div class="stat-name">04-23-2025</div><div class="stat-detail">42명 참여</div></div><span class="stat-value">135회</span></div>
+                        <div class="stat-item"><span class="stat-rank">3</span><div class="stat-info"><div class="stat-name">10-21-2025</div><div class="stat-detail">20명 참여</div></div><span class="stat-value">111회</span></div>
+                        <div class="stat-item"><span class="stat-rank">4</span><div class="stat-info"><div class="stat-name">04-03-2025</div><div class="stat-detail">27명 참여</div></div><span class="stat-value">101회</span></div>
+                        <div class="stat-item"><span class="stat-rank">5</span><div class="stat-info"><div class="stat-name">10-25-2025</div><div class="stat-detail">17명 참여</div></div><span class="stat-value">76회</span></div>
+                        <div class="stat-item"><span class="stat-rank">6</span><div class="stat-info"><div class="stat-name">07-01-2025</div><div class="stat-detail">11명 참여</div></div><span class="stat-value">69회</span></div>
+                        <div class="stat-item"><span class="stat-rank">7</span><div class="stat-info"><div class="stat-name">11-26-2025</div><div class="stat-detail">19명 참여</div></div><span class="stat-value">69회</span></div>
+                        <div class="stat-item"><span class="stat-rank">8</span><div class="stat-info"><div class="stat-name">10-26-2025</div><div class="stat-detail">21명 참여</div></div><span class="stat-value">65회</span></div>
+                        <div class="stat-item"><span class="stat-rank">9</span><div class="stat-info"><div class="stat-name">02-05-2025</div><div class="stat-detail">5명 참여</div></div><span class="stat-value">52회</span></div>
+                        <div class="stat-item"><span class="stat-rank">10</span><div class="stat-info"><div class="stat-name">09-02-2025</div><div class="stat-detail">9명 참여</div></div><span class="stat-value">51회</span></div>
+                        <div class="stat-item"><span class="stat-rank">11</span><div class="stat-info"><div class="stat-name">10-19-2025</div><div class="stat-detail">12명 참여</div></div><span class="stat-value">51회</span></div>
+                        <div class="stat-item"><span class="stat-rank">12</span><div class="stat-info"><div class="stat-name">04-29-2025</div><div class="stat-detail">11명 참여</div></div><span class="stat-value">50회</span></div>
+                        <div class="stat-item"><span class="stat-rank">13</span><div class="stat-info"><div class="stat-name">02-04-2025</div><div class="stat-detail">10명 참여</div></div><span class="stat-value">46회</span></div>
+                        <div class="stat-item"><span class="stat-rank">14</span><div class="stat-info"><div class="stat-name">10-17-2025</div><div class="stat-detail">5명 참여</div></div><span class="stat-value">40회</span></div>
+                        <div class="stat-item"><span class="stat-rank">15</span><div class="stat-info"><div class="stat-name">12-21-2025</div><div class="stat-detail">13명 참여</div></div><span class="stat-value">40회</span></div>
+                        <div class="stat-item"><span class="stat-rank">16</span><div class="stat-info"><div class="stat-name">01-03-2025</div><div class="stat-detail">15명 참여</div></div><span class="stat-value">39회</span></div>
+                        <div class="stat-item"><span class="stat-rank">17</span><div class="stat-info"><div class="stat-name">10-23-2025</div><div class="stat-detail">9명 참여</div></div><span class="stat-value">37회</span></div>
+                        <div class="stat-item"><span class="stat-rank">18</span><div class="stat-info"><div class="stat-name">03-25-2025</div><div class="stat-detail">7명 참여</div></div><span class="stat-value">36회</span></div>
+                        <div class="stat-item"><span class="stat-rank">19</span><div class="stat-info"><div class="stat-name">12-06-2025</div><div class="stat-detail">7명 참여</div></div><span class="stat-value">36회</span></div>
+                        <div class="stat-item"><span class="stat-rank">20</span><div class="stat-info"><div class="stat-name">01-23-2025</div><div class="stat-detail">5명 참여</div></div><span class="stat-value">35회</span></div>
+                    </div>
+                </div>
+
+                <!-- Occupation Mention Ranking 2025 -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-icon">🏆</span>
+                        <h2 class="card-title">2025년 소속별 언급순위</h2>
+                    </div>
+                    <div class="leaderboard">
+                        <div class="leaderboard-item"><span class="rank rank-1">1</span><span class="name">수성초</span><span class="count">849회</span><span class="meta">90명</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-2">2</span><span class="name">NU</span><span class="count">585회</span><span class="meta">15명</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-3">3</span><span class="name">OSU</span><span class="count">432회</span><span class="meta">14명</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">4</span><span class="name">카카오톡</span><span class="count">259회</span><span class="meta">9명</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">5</span><span class="name">MAVERICK</span><span class="count">250회</span><span class="meta">12명</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">6</span><span class="name">무소속</span><span class="count">228회</span><span class="meta">34명</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">7</span><span class="name">행복한교회</span><span class="count">82회</span><span class="meta">11명</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">8</span><span class="name">NEPES</span><span class="count">36회</span><span class="meta">1명</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">9</span><span class="name">DCU</span><span class="count">27회</span><span class="meta">3명</span></div>
+                        <div class="leaderboard-item"><span class="rank rank-other">10</span><span class="name">신천지</span><span class="count">12회</span><span class="meta">2명</span></div>
+                    </div>
+                </div>
+
+                <!-- Occupation Rankings 2025 -->
+                <div class="card full-width">
+                    <div class="card-header">
+                        <span class="card-icon">🏢</span>
+                        <h2 class="card-title">2025년 소속별 TOP 10</h2>
+                    </div>
+                    <div class="occupation-grid">
+                        <div class="occ-card">
+                            <div class="occ-card-header">
+                                <span class="occ-card-title purple">🟣 NU</span>
+                            </div>
+                            <div class="occ-list">
+                                <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">Jasonn Cooney</span><span class="occ-count">191회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">2.</span><span class="occ-name">Ava Manfre</span><span class="occ-count">157회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">3.</span><span class="occ-name">심의섭</span><span class="occ-count">137회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">4.</span><span class="occ-name">오예진</span><span class="occ-count">24회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">5.</span><span class="occ-name">노수연</span><span class="occ-count">18회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">6.</span><span class="occ-name">김택권</span><span class="occ-count">13회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">7.</span><span class="occ-name">Zitian Dai</span><span class="occ-count">10회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">8.</span><span class="occ-name">김채윤</span><span class="occ-count">10회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">9.</span><span class="occ-name">정다은 (단단이)</span><span class="occ-count">7회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">10.</span><span class="occ-name">김희연</span><span class="occ-count">7회</span></div>
+                            </div>
+                        </div>
+                        <div class="occ-card">
+                            <div class="occ-card-header">
+                                <span class="occ-card-title red">🔴 OSU</span>
+                            </div>
+                            <div class="occ-list">
+                                <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">김진성</span><span class="occ-count">113회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">2.</span><span class="occ-name">최휘서</span><span class="occ-count">108회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">3.</span><span class="occ-name">최유진</span><span class="occ-count">55회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">4.</span><span class="occ-name">김나윤</span><span class="occ-count">47회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">5.</span><span class="occ-name">박종하</span><span class="occ-count">42회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">6.</span><span class="occ-name">변형빈</span><span class="occ-count">17회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">7.</span><span class="occ-name">박예인</span><span class="occ-count">16회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">8.</span><span class="occ-name">김세진</span><span class="occ-count">11회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">9.</span><span class="occ-name">징이</span><span class="occ-count">5회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">10.</span><span class="occ-name">김동건</span><span class="occ-count">4회</span></div>
+                            </div>
+                        </div>
+                        <div class="occ-card">
+                            <div class="occ-card-header">
+                                <span class="occ-card-title green">🟢 수성초</span>
+                            </div>
+                            <div class="occ-list">
+                                <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">송동건</span><span class="occ-count">98회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">2.</span><span class="occ-name">정원식</span><span class="occ-count">80회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">3.</span><span class="occ-name">최유백</span><span class="occ-count">39회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">4.</span><span class="occ-name">서종원</span><span class="occ-count">34회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">5.</span><span class="occ-name">김도건</span><span class="occ-count">29회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">6.</span><span class="occ-name">박영훈</span><span class="occ-count">24회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">7.</span><span class="occ-name">이경백</span><span class="occ-count">23회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">8.</span><span class="occ-name">박상현</span><span class="occ-count">21회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">9.</span><span class="occ-name">이창주</span><span class="occ-count">21회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">10.</span><span class="occ-name">장세일</span><span class="occ-count">17회</span></div>
+                            </div>
+                        </div>
+                        <div class="occ-card">
+                            <div class="occ-card-header">
+                                <span class="occ-card-title blue">🔵 MAVERICK</span>
+                            </div>
+                            <div class="occ-list">
+                                <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">홍문수</span><span class="occ-count">53회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">2.</span><span class="occ-name">백인혁</span><span class="occ-count">47회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">3.</span><span class="occ-name">김도윤</span><span class="occ-count">46회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">4.</span><span class="occ-name">박규태</span><span class="occ-count">29회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">5.</span><span class="occ-name">이채민</span><span class="occ-count">24회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">6.</span><span class="occ-name">김나원</span><span class="occ-count">15회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">7.</span><span class="occ-name">채하람</span><span class="occ-count">12회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">8.</span><span class="occ-name">조형빈</span><span class="occ-count">8회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">9.</span><span class="occ-name">서주현</span><span class="occ-count">5회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">10.</span><span class="occ-name">이현수</span><span class="occ-count">4회</span></div>
+                            </div>
+                        </div>
+                        <div class="occ-card">
+                            <div class="occ-card-header">
+                                <span class="occ-card-title yellow">🟡 카카오톡</span>
+                            </div>
+                            <div class="occ-list">
+                                <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">이희루</span><span class="occ-count">204회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">2.</span><span class="occ-name">헌이</span><span class="occ-count">17회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">3.</span><span class="occ-name">파파존스</span><span class="occ-count">14회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">4.</span><span class="occ-name">준이</span><span class="occ-count">10회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">5.</span><span class="occ-name">현종이오빠</span><span class="occ-count">5회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">6.</span><span class="occ-name">범죄자관상남</span><span class="occ-count">4회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">7.</span><span class="occ-name">고길동</span><span class="occ-count">3회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">8.</span><span class="occ-name">이선정</span><span class="occ-count">1회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">9.</span><span class="occ-name">턱접남</span><span class="occ-count">1회</span></div>
+                            </div>
+                        </div>
+                        <div class="occ-card">
+                            <div class="occ-card-header">
+                                <span class="occ-card-title pink">💗 행복한교회</span>
+                            </div>
+                            <div class="occ-list">
+                                <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">이예슬</span><span class="occ-count">18회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">2.</span><span class="occ-name">정태우</span><span class="occ-count">15회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">3.</span><span class="occ-name">이종건</span><span class="occ-count">11회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">4.</span><span class="occ-name">김영은</span><span class="occ-count">9회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">5.</span><span class="occ-name">최현동</span><span class="occ-count">7회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">6.</span><span class="occ-name">이예희</span><span class="occ-count">6회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">7.</span><span class="occ-name">김민서</span><span class="occ-count">5회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">8.</span><span class="occ-name">최혜지</span><span class="occ-count">5회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">9.</span><span class="occ-name">장호진</span><span class="occ-count">2회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">10.</span><span class="occ-name">김소영</span><span class="occ-count">2회</span></div>
+                            </div>
+                        </div>
+                        <div class="occ-card">
+                            <div class="occ-card-header">
+                                <span class="occ-card-title skyblue">🩵 DCU</span>
+                            </div>
+                            <div class="occ-list">
+                                <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">박세아</span><span class="occ-count">22회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">2.</span><span class="occ-name">정시윤</span><span class="occ-count">3회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">3.</span><span class="occ-name">이예지</span><span class="occ-count">2회</span></div>
+                            </div>
+                        </div>
+                        <div class="occ-card">
+                            <div class="occ-card-header">
+                                <span class="occ-card-title orange">🟠 NEPES</span>
+                            </div>
+                            <div class="occ-list">
+                                <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">김남훈</span><span class="occ-count">36회</span></div>
+                            </div>
+                        </div>
+                        <div class="occ-card">
+                            <div class="occ-card-header">
+                                <span class="occ-card-title " style="color: #fff;">⚪ 무소속</span>
+                            </div>
+                            <div class="occ-list">
+                                <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">최창민 (보잡째)</span><span class="occ-count">22회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">2.</span><span class="occ-name">이빈화</span><span class="occ-count">21회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">3.</span><span class="occ-name">Haolin</span><span class="occ-count">18회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">4.</span><span class="occ-name">봉기니 (김보성)</span><span class="occ-count">17회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">5.</span><span class="occ-name">이승전</span><span class="occ-count">13회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">6.</span><span class="occ-name">최창민 (37세)</span><span class="occ-count">13회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">7.</span><span class="occ-name">영엠</span><span class="occ-count">10회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">8.</span><span class="occ-name">강종윤</span><span class="occ-count">9회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">9.</span><span class="occ-name">Bilge Mutlu</span><span class="occ-count">8회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">10.</span><span class="occ-name">김준욱</span><span class="occ-count">8회</span></div>
+                            </div>
+                        </div>
+                        <div class="occ-card">
+                            <div class="occ-card-header">
+                                <span class="occ-card-title " style="color: #9ca3af;">⛪ 신천지</span>
+                            </div>
+                            <div class="occ-list">
+                                <div class="occ-list-item"><span class="rank-num">1.</span><span class="occ-name">김예서</span><span class="occ-count">10회</span></div>
+                                <div class="occ-list-item"><span class="rank-num">2.</span><span class="occ-name">푸주</span><span class="occ-count">2회</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <footer>
-            <p>ERCF Message Statistics Report • Generated on Feb 3, 2026</p>
+            <p>ERCF Message Statistics Report • Generated on Feb 04, 2026</p>
         </footer>
     </div>
 
     <script>
         function showYear(year) {
-            // Hide all content
             document.querySelectorAll('.year-content').forEach(el => {
                 el.classList.remove('active');
             });
             
-            // Remove active from all tabs
             document.querySelectorAll('.year-tab').forEach(el => {
                 el.classList.remove('active');
             });
             
-            // Show selected year content
             document.getElementById('year-' + year).classList.add('active');
-            
-            // Activate selected tab
             event.target.classList.add('active');
         }
 
-        // Occupation data - add more mappings here!
-        const occupations = {
-            // 카카오톡 (Yellow)
-            "이희루": "카카오톡",
-            "아자": "카카오톡",
-            "김선훈": "카카오톡",
-            "빡빡이": "카카오톡",
-            "ㄱㅇㅅ": "카카오톡",
-            "2n": "카카오톡",
-            "군밤장수": "카카오톡",
-            "헌이": "카카오톡",
-            "파파존스": "카카오톡",
-            "준이": "카카오톡",
-            "현종이오빠": "카카오톡",
-            "범죄자관상남": "카카오톡",
-            "고길동": "카카오톡",
-            "이선정": "카카오톡",
-            "턱접남": "카카오톡",
-            "박준귤": "카카오톡",
-            "밤장수": "카카오톡",
-            "왜이러세요남": "카카오톡",
-            "홍길동": "카카오톡",
-            
-            // NU (Purple)
-            "Jasonn Cooney": "NU",
-            "Ava Manfre": "NU",
-            "심의섭": "NU",
-            "오예진": "NU",
-            "Jasmine Cooney": "NU",
-            "Zitian Dai": "NU",
-            "김택권": "NU",
-            "노수연": "NU",
-            "김채윤": "NU",
-            "정다은 (단단이)": "NU",
-            "김희연": "NU",
-            "김동윤": "NU",
-            "Adam": "NU",
-            "Andy Zhao": "NU",
-            "Joel": "NU",
-            
-            // OSU (Red)
+        // Occupation data for badges
+        const occupations = {"김남훈": "NEPES",
+            "이빈화": "무소속",
+            "Haolin": "무소속",
+            "봉기니 (김보성)": "무소속",
+            "최창민 (보잡째)": "무소속",
+            "이승전": "무소속",
+            "최창민 (37세)": "무소속",
+            "노떙큐": "무소속",
+            "영엠": "무소속",
+            "강종윤": "무소속",
+            "Bilge Mutlu": "무소속",
+            "김준욱": "무소속",
+            "강재나": "무소속",
+            "Sydney Smith": "무소속",
+            "박종민": "무소속",
+            "신성발": "무소속",
+            "장우석": "무소속",
+            "안휘목": "무소속",
+            "서동연": "무소속",
+            "신선우": "무소속",
+            "김도영": "무소속",
+            "Zac Bond": "무소속",
+            "이은성": "무소속",
+            "박명진": "무소속",
+            "가오뚱남": "무소속",
+            "K-Jasonn": "무소속",
+            "최예지": "무소속",
+            "경주국밥 아줌마": "무소속",
+            "스무디남": "무소속",
+            "김지은 (고고지은공주)": "무소속",
+            "허재영": "무소속",
+            "뱅본": "무소속",
+            "엣고": "무소속",
+            "신세린": "무소속",
+            "노희재": "무소속",
+            "양지아": "무소속",
+            "Dan Song": "무소속",
+            "박세아": "DCU",
+            "정시윤": "DCU",
+            "이예지": "DCU",
             "김진성": "OSU",
             "최휘서": "OSU",
             "최유진": "OSU",
@@ -1281,8 +1333,48 @@
             "한주엽 (매새)": "OSU",
             "박성운": "OSU",
             "6강남 (하성록)": "OSU",
-            
-            // 수성초 (Green)
+            "이희루": "카카오톡",
+            "헌이": "카카오톡",
+            "파파존스": "카카오톡",
+            "준이": "카카오톡",
+            "현종이오빠": "카카오톡",
+            "범죄자관상남": "카카오톡",
+            "고길동": "카카오톡",
+            "이선정": "카카오톡",
+            "턱접남": "카카오톡",
+            "아자": "카카오톡",
+            "ㄱㅇㅅ": "카카오톡",
+            "김선훈": "카카오톡",
+            "빡빡이": "카카오톡",
+            "2n": "카카오톡",
+            "박준귤": "카카오톡",
+            "밤장수": "카카오톡",
+            "왜이러세요남": "카카오톡",
+            "인정남": "카카오톡",
+            "정신차린새끼": "카카오톡",
+            "홍길동": "카카오톡",
+            "킥보드남": "카카오톡",
+            "원조가잡직남": "카카오톡",
+            "무서운형님": "카카오톡",
+            "드라이브남": "카카오톡",
+            "빡대가리남": "카카오톡",
+            "Jasonn Cooney": "NU",
+            "Ava Manfre": "NU",
+            "심의섭": "NU",
+            "오예진": "NU",
+            "노수연": "NU",
+            "김택권": "NU",
+            "Zitian Dai": "NU",
+            "김채윤": "NU",
+            "정다은 (단단이)": "NU",
+            "김희연": "NU",
+            "이현지": "NU",
+            "김동윤": "NU",
+            "Adam": "NU",
+            "Andy Zhao": "NU",
+            "Jasmine Cooney": "NU",
+            "김승주": "NU",
+            "Joel": "NU",
             "송동건": "수성초",
             "정원식": "수성초",
             "최유백": "수성초",
@@ -1291,11 +1383,8 @@
             "박영훈": "수성초",
             "이경백": "수성초",
             "박상현": "수성초",
-            "이원문": "수성초",
-            "장세일": "수성초",
-            "전채린": "수성초",
-            "김창경": "수성초",
             "이창주": "수성초",
+            "장세일": "수성초",
             "최혁준": "수성초",
             "사공금": "수성초",
             "윤지환": "수성초",
@@ -1308,11 +1397,13 @@
             "기본기": "수성초",
             "조성재": "수성초",
             "박천호": "수성초",
+            "전채린": "수성초",
             "김병건": "수성초",
             "조혜원": "수성초",
             "박광영": "수성초",
             "김휘찬": "수성초",
             "권기용": "수성초",
+            "김창경": "수성초",
             "이동훈": "수성초",
             "최홍주": "수성초",
             "정재민": "수성초",
@@ -1320,9 +1411,9 @@
             "성동영": "수성초",
             "이시원": "수성초",
             "윤관우": "수성초",
+            "이원문": "수성초",
             "최창욱": "수성초",
             "류진영 (강훈이아버지)": "수성초",
-            "류진영": "수성초",
             "장승우": "수성초",
             "황기욱": "수성초",
             "김태현": "수성초",
@@ -1331,10 +1422,49 @@
             "조경록": "수성초",
             "김영대": "수성초",
             "김학일": "수성초",
+            "이수민 (하얀이수민)": "수성초",
+            "이수민 (5반)": "수성초",
+            "변창현": "수성초",
+            "송두원": "수성초",
+            "김도균": "수성초",
+            "신유진": "수성초",
+            "이현석": "수성초",
+            "윤성호": "수성초",
+            "손혜영": "수성초",
+            "김경민": "수성초",
+            "송준표": "수성초",
+            "김효경": "수성초",
+            "장규태": "수성초",
+            "임기현": "수성초",
+            "이해인": "수성초",
+            "최기태": "수성초",
+            "정다연": "수성초",
             "심예진": "수성초",
+            "최서연": "수성초",
+            "최지원": "수성초",
+            "석태원": "수성초",
+            "임성윤": "수성초",
             "박도준": "수성초",
-            
-            // MAVERICK (Blue)
+            "김수진": "수성초",
+            "배인숙": "수성초",
+            "김효정": "수성초",
+            "이승준": "수성초",
+            "윤하영": "수성초",
+            "이송권": "수성초",
+            "김다영": "수성초",
+            "지민석": "수성초",
+            "이영원": "수성초",
+            "장소라": "수성초",
+            "김규민": "수성초",
+            "김수영": "수성초",
+            "손은서": "수성초",
+            "이동근": "수성초",
+            "권건우": "수성초",
+            "성현주": "수성초",
+            "윤진수": "수성초",
+            "강유경": "수성초",
+            "김보경": "수성초",
+            "이다연": "수성초",
             "홍문수": "MAVERICK",
             "백인혁": "MAVERICK",
             "김도윤": "MAVERICK",
@@ -1347,64 +1477,25 @@
             "이현수": "MAVERICK",
             "이선홍": "MAVERICK",
             "김영석": "MAVERICK",
-            
-            // 무소속 additions
-            "엣고": "무소속",
-            "안휘목": "무소속",
-            "뱅본": "무소속",
-            "최예지": "무소속",
-            
-            // 신천지 addition
-            "김인애": "신천지",
-            
-            // NEPES (Orange)
-            "김남훈": "NEPES",
-            
-            // DCU (Sky Blue)
-            "박세아": "DCU",
-            "정시윤": "DCU",
-            "이예지": "DCU",
-            
-            // 행복한교회 (Pink)
             "이예슬": "행복한교회",
+            "정태우": "행복한교회",
             "이종건": "행복한교회",
             "김영은": "행복한교회",
             "최현동": "행복한교회",
-            "김민서": "행복한교회",
             "이예희": "행복한교회",
-            "김혜지 (뚱녀)": "행복한교회",
-            "우리붙잡은새끼": "행복한교회",
-            "권수진": "행복한교회",
-            "쌍둥이왼쪽": "행복한교회",
-            "쌍둥이오른쪽": "행복한교회",
-            "화장떡칠고딩": "행복한교회",
-            "장호진": "행복한교회",
-            "추혁준": "행복한교회",
-            "정태우": "행복한교회",
+            "김민서": "행복한교회",
             "최혜지": "행복한교회",
+            "귤모자": "행복한교회",
+            "화장떡칠고딩": "행복한교회",
             "김소영": "행복한교회",
             "김하영": "행복한교회",
-            
-            // 무소속 (White)
-            "이빈화": "무소속",
-            "Haolin": "무소속",
-            "노희재": "무소속",
-            "엣고": "무소속",
-            "이승전": "무소속",
-            "최창민 (보잡째)": "무소속",
-            "강종윤": "무소속",
-            "봉기니 (김보성)": "무소속",
-            "최창민 (37세)": "무소속",
-            "영엠": "무소속",
-            "Bilge Mutlu": "무소속",
-            "김준욱": "무소속",
-            
-            // 신천지
+            "추혁준": "행복한교회",
+            "장호진": "행복한교회",
+            "송강": "행복한교회",
             "김예서": "신천지",
-            "푸주": "신천지"
-        };
+            "푸주": "신천지",
+            "김인애": "신천지"};
 
-        // Add occupation badges to names
         function addOccupationBadges() {
             document.querySelectorAll('.leaderboard-item .name, .month-item').forEach(el => {
                 const text = el.textContent.trim();
@@ -1420,7 +1511,6 @@
             });
         }
 
-        // Run on page load
         addOccupationBadges();
     </script>
 </body>
