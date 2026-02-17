@@ -1014,7 +1014,7 @@ def generate_html():
         const occupations = {{{occupation_js}}};
 
         function addOccupationBadges() {{
-            document.querySelectorAll('.leaderboard-item .name, .month-item').forEach(el => {{
+            document.querySelectorAll('.leaderboard-item .name').forEach(el => {{
                 const text = el.textContent.trim();
                 for (const [name, occupation] of Object.entries(occupations)) {{
                     if (text.includes(name) && !el.querySelector('.occupation-badge')) {{
